@@ -1,0 +1,108 @@
+
+
+<div class="card">
+  <div class="card-header">Aprobar Solicitud para SAHI externo</div>
+  <div class="card-body">
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th class="vertical-header text-center">Solicitud Nro.{{solicitud?.id}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-center fw-bold">Fecha de la solicitud:</td>
+          <td class="text-center">{{solicitud?.fecha_solicitud}}</td>
+        </tr>
+        <tr>
+          <td class="text-center fw-bold">Nombre del solicitante:</td>
+          <td class="text-center">{{solicitud?.solicitante_nombre}}</td>
+        </tr>
+        <tr>
+          <td class="text-center fw-bold">Area del solicitante:</td>
+          <td class="text-center">{{solicitud?.solicitante_area}}</td>
+        </tr>
+        <tr>
+          <td class="text-center fw-bold">Cargo del solicitante:</td>
+          <td class="text-center">{{solicitud?.solicitante_cargo}}</td>
+        </tr>
+        <tr>
+          <td class="text-center fw-bold">Justificación:</td>
+          <td class="text-center">{{solicitud?.justificacion}}</td>
+        </tr>
+        <tr>
+          <td class="text-center fw-bold">Fecha de inicio del periodo de acceso:</td>
+          <td class="text-center">{{solicitud?.fecha_inicio}}</td>
+        </tr>
+        <tr>
+          <td class="text-center fw-bold">Fecha de fin del periodo de acceso: </td>
+          <td class="text-center">{{solicitud?.fecha_fin}}</td>
+        </tr>
+        <tr>
+          <td class="text-center fw-bold">Nombre de para quien es el acceso:</td>
+          <td class="text-center">{{solicitud?.destinatario_nombre}}</td>
+        </tr>
+        <tr>
+          <td class="text-center fw-bold">Usuario de para quien es el acceso:</td>
+          <td class="text-center" >{{solicitud?.destinatario_usuario}}</td>
+        </tr>
+        <tr>
+          <td class="text-center fw-bold">Area de para quien es el acceso:</td>
+          <td class="text-center">{{solicitud?.destinatario_area}}</td>
+        </tr>
+
+        <tr>
+          <td class="text-center fw-bold">Cargo de para quien es el acceso: </td>
+          <td class="text-center">{{solicitud?.destinatario_cargo}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <form [formGroup]="formularioDeSolicitud"  (ngSubmit)="enviarDatos()">
+
+      <div class="mb-3 d-none">
+        <input formControlName="aprueba_nombre" type="text" id="disabledTextInput" class="form-control" placeholder={{userNombre}}>
+      </div>
+
+      <div class="mb-3 d-none">
+        <input formControlName="aprueba_cargo" type="text" id="disabledTextInput" class="form-control" placeholder={{userCargo}}>
+      </div>
+
+      <div class="mb-3">
+        <label for="" class="form-label fw-bold">Estado</label>
+        <select  formControlName="estado" class="form-select" aria-label="Default select example">
+          <option selected>Pendiente</option>
+          <option value="Aprobado">Aprobado</option>
+          <option value="Rechazado">Rechazado</option>
+        </select>
+      </div>
+
+
+      <div class="btn-groups" role="group" aria-label="Button group name">
+        <button
+          type="submit"
+          class="btn btn-success me-3"
+        >
+          Guardar
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          routerLink="/inicio"
+        >
+          Cancelar
+        </button>
+
+      </div>
+
+
+
+    </form>
+
+
+  </div>
+
+</div>
+

@@ -1,0 +1,32 @@
+<h1 class="text-center">SOLICITUD SAHI EXTERNO</h1>
+
+<div class="container-fluid d-flex align-items-center justify-content-center">
+  <form [formGroup]="loginForm" class="m-5">
+    <p class="text-danger">{{loginError}}</p>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label fw-bold">Correo Electrónico</label>
+      <input formControlName="usuarioemail" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div *ngIf="email.invalid && (email.dirty || email.touched)"
+              class="text-danger">
+              <div *ngIf="email.errors?.['required']">
+                  El Email es requerido.
+              </div>
+              <div *ngIf="email.errors?.['email']">
+                  El Email debe tener un formato válido.
+              </div>
+          </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label ">Contraseña</label>
+      <input formControlName="usuariopassword" type="password" class="form-control" id="exampleInputPassword1">
+          <div *ngIf="password.invalid && (password.dirty || password.touched)"
+              class="text-danger">
+              <div *ngIf="password.errors?.['required']">
+                  El Password es requerido.
+              </div>
+          </div>
+    </div>
+    <button type="submit" (click)="login()" class="btn btn-primary">Iniciar sesión</button>
+  </form>
+
+</div>

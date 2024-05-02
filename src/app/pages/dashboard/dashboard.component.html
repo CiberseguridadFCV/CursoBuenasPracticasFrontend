@@ -1,0 +1,45 @@
+  <app-nav></app-nav>
+<div class="m-5">
+  <p *ngIf="!userLoginOn">Usuario no Autenticado</p>
+
+  <a class="btn btn-primary mb-3" routerLink="/agregar-solicitud" role="button" >Crear solicitud</a>
+
+
+  <div *ngIf="userLoginOn">
+
+    <div class="card">
+      <div class="card-header">Solicitudes</div>
+      <div class="card-body">
+        <div
+          class="table-responsive"
+        >
+          <table class="table" >
+            <thead>
+              <tr>
+                <th scope="col">Solicitud Nro.</th>
+                <th scope="col">Fecha de la solicitud</th>
+                <th scope="col">Nombre de quien solicita</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let solicitud of Solicitudes; let iControl=index">
+                <td>{{solicitud.id}}</td>
+                <td>{{solicitud.fecha_solicitud | date:'yyyy-MM-dd'}}</td>
+                <td>{{solicitud.solicitante_nombre}}</td>
+                <td>{{solicitud.estado}}</td>
+                <td><a routerLink="/ver-solicitud/{{solicitud.id}}" class="btn btn-primary">Ver</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+  </div>
+</div>
