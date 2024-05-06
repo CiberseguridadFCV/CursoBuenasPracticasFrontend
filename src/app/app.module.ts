@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, PLATFORM_ID } from '@angular/core';
+import { BrowserModule  } from '@angular/platform-browser';
+import { CSP_NONCE } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,8 +36,9 @@ import { EditarSolicitudComponent } from './pages/editar-solicitud/editar-solici
     ReactiveFormsModule,
   ],
   providers: [
-    {provide:HTTP_INTERCEPTORS, useClass: JwtInterceptorService,multi:true},
-    {provide:HTTP_INTERCEPTORS,useClass: ErrorInterceptorService, multi:true}
+    { provide:HTTP_INTERCEPTORS, useClass: JwtInterceptorService,multi:true },
+    { provide:HTTP_INTERCEPTORS,useClass: ErrorInterceptorService, multi:true },
+    { provide: CSP_NONCE, useFactory: () => (window as any)['nonce'], deps: [PLATFORM_ID] },
   ],
   bootstrap: [AppComponent]
 })

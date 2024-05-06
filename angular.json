@@ -74,6 +74,11 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "ssl": true,
+            "sslKey": "D:/Fcv/Curso de desarollo/Aplicacion ejemplo de buenas prácticas/FRONTENDSAHIexterno/frontend/key.pem",
+            "sslCert": "D:/Fcv/Curso de desarollo/Aplicacion ejemplo de buenas prácticas/FRONTENDSAHIexterno/frontend/cert.pem"
+          },
           "configurations": {
             "production": {
               "buildTarget": "frontend:build:production"
