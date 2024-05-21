@@ -1,32 +1,93 @@
-<h1 class="text-center">SOLICITUD SAHI EXTERNO</h1>
+<div class="login d-grid align-items-center d-none">
+    <h1 class="text-center mb-5 text-white mt-4">GESTOR DE EMPLEADOS</h1>
 
-<div class="container-fluid d-flex align-items-center justify-content-center">
-  <form [formGroup]="loginForm" class="m-5">
-    <p class="text-danger">{{loginError}}</p>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label fw-bold">Correo Electrónico</label>
-      <input formControlName="usuarioemail" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div *ngIf="email.invalid && (email.dirty || email.touched)"
-              class="text-danger">
-              <div *ngIf="email.errors?.['required']">
-                  El Email es requerido.
-              </div>
-              <div *ngIf="email.errors?.['email']">
-                  El Email debe tener un formato válido.
-              </div>
-          </div>
+  <div class="container-fluid mt-5 d-grid align-items-center justify-content-center rounded-3 w-25 shadow-lg border bg-white">
+
+    <div class="centrar mt-3">
+      <h3 class="text-center text-black">Login</h3>
     </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label ">Contraseña</label>
-      <input formControlName="usuariopassword" type="password" class="form-control" id="exampleInputPassword1">
-          <div *ngIf="password.invalid && (password.dirty || password.touched)"
-              class="text-danger">
-              <div *ngIf="password.errors?.['required']">
-                  El Password es requerido.
-              </div>
-          </div>
-    </div>
-    <button type="submit" (click)="login()" class="btn btn-primary">Iniciar sesión</button>
-  </form>
+
+    <form [formGroup]="loginForm" class="m-2">
+      <p class="text-danger">{{loginError}}</p>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label fw-bold text-black">Correo Electrónico</label>
+        <input formControlName="usuarioemail" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                class="text-danger">
+                <div *ngIf="email.errors?.['required']">
+                    El Email es requerido.
+                </div>
+                <div *ngIf="email.errors?.['email']">
+                    El Email debe tener un formato válido.
+                </div>
+            </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label fw-bold text-black">Contraseña</label>
+        <input formControlName="usuariopassword" type="password" class="form-control" id="exampleInputPassword1">
+            <div *ngIf="password.invalid && (password.dirty || password.touched)"
+                class="text-danger">
+                <div *ngIf="password.errors?.['required']">
+                    El Password es requerido.
+                </div>
+            </div>
+      </div>
+      <div class="centrar m-3">
+        <button type="submit" (click)="login()" class="btn btn-success">Iniciar sesión</button>
+      </div>
+    </form>
+
+  </div>
 
 </div>
+
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <!----------------------- Login Container -------------------------->
+     <div class="row border rounded-5 p-3 bg-white shadow box-area">
+  <!--------------------------- Left Box ----------------------------->
+     <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #103cbe;">
+         <div class="featured-image mb-3">
+          <img src="assets/1.png" class="img-fluid" style="width: 250px;">
+         </div>
+         <p class="text-white fs-2" style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Gestor de empleados</p>
+         <small class="text-white text-wrap text-center" style="width: 17rem;font-family: 'Courier New', Courier, monospace;">Ciberseguridad - FCV</small>
+     </div> 
+  <!-------------------- ------ Right Box ---------------------------->
+      
+     <form [formGroup]="loginForm" class="col-md-6 right-box">
+        <div class="row align-items-center">
+              <div class="header-text mb-4">
+                   <h2>Login</h2>
+                   <p class="text-danger">{{loginError}}</p>
+                   <p>Por favor, inicia sesión para continuar</p>
+              </div>
+              <div class="mb-5">
+                  <input formControlName="usuarioemail" type="email" class="form-control form-control-lg bg-light fs-6" aria-describedby="emailHelp" placeholder="Correo Electrónico">
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                      class="text-danger position-absolute">
+                        <div *ngIf="email.errors?.['required']">
+                          El Email es requerido.
+                        </div>
+                        <div *ngIf="email.errors?.['email']">
+                          El Email debe tener un formato válido.
+                        </div>
+                    </div>
+                </div>
+              <div class="mb-3">
+                  <input formControlName="usuariopassword"  type="password" class="form-control form-control-lg bg-light fs-6" id="exampleInputPassword1" placeholder="Contraseña">
+                    <div *ngIf="password.invalid && (password.dirty || password.touched)"
+                      class="text-danger position-absolute">
+                        <div *ngIf="password.errors?.['required']">
+                          El Password es requerido.
+                        </div>
+                    </div>
+              </div>
+
+              <div class="input-group my-4">
+                  <button type="submit" (click)="login()" class="btn btn-lg btn-primary w-100 fs-6">Iniciar sesión</button>
+              </div>
+        </div>
+      </form> 
+    </div>
+  </div>
