@@ -76,8 +76,8 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "ssl": true,
-            "sslKey": "D:/Fcv/Curso de desarollo/Aplicacion ejemplo de buenas prácticas/FRONTENDSAHIexterno/frontend/key.pem",
-            "sslCert": "D:/Fcv/Curso de desarollo/Aplicacion ejemplo de buenas prácticas/FRONTENDSAHIexterno/frontend/cert.pem"
+            "sslKey": "C:/Users/smcm_/Documents/FCV/Curso de desarollo de software seguro/Aplicacion/CursoBuenasPracticasFrontend/key.pem",
+            "sslCert": "C:/Users/smcm_/Documents/FCV/Curso de desarollo de software seguro/Aplicacion/CursoBuenasPracticasFrontend/cert.pem"
           },
           "configurations": {
             "production": {
