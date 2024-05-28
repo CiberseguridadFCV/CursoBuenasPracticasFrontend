@@ -75,7 +75,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "ssl": false,
+            "ssl": true,
             "sslKey": "C:/Users/smcm_/Documents/FCV/Curso de desarollo de software seguro/Aplicacion/CursoBuenasPracticasFrontend/key.pem",
             "sslCert": "C:/Users/smcm_/Documents/FCV/Curso de desarollo de software seguro/Aplicacion/CursoBuenasPracticasFrontend/cert.pem"
           },

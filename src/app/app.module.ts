@@ -13,8 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JwtInterceptorService } from './services/auth/jwt-interceptor.service';
 import { ErrorInterceptorService } from './services/auth/error-interceptor.service';
-import { AgregarSolicitudComponent } from './pages/agregar-solicitud/agregar-solicitud.component';
-import { EditarSolicitudComponent } from './pages/editar-solicitud/editar-solicitud.component';
+import { AgregarEmpleadoComponent } from './pages/agregar-empleado/agregar-empleado.component';
+import { EditarEmpleadoComponent } from './pages/editar-empleado/editar-empleado.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +24,8 @@ import { EditarSolicitudComponent } from './pages/editar-solicitud/editar-solici
     DashboardComponent,
     LoginComponent,
     NavComponent,
-    AgregarSolicitudComponent,
-    EditarSolicitudComponent
+    AgregarEmpleadoComponent,
+    EditarEmpleadoComponent
   ],
   imports: [
     BrowserModule,

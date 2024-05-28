@@ -2,34 +2,34 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
-import { Solicitud } from './solicitud';
+import { Empleado } from './empleado';
 import { environment } from '../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SolicitudService {
+export class EmpleadoService {
 
   constructor(private http: HttpClient) { }
 
-  getSolicitud(id:number):Observable<Solicitud>{
-    return this.http.get<Solicitud>(environment.urlApi + "solicitud/listar/" + id ).pipe(
+  getEmpleado(id:number):Observable<Empleado>{
+    return this.http.get<Empleado>(environment.urlApi + "empleado/listar/" + id ).pipe(
       catchError(this.handleError)
     )
   }
 
-  getSolicitudes():Observable<Solicitud>{
-    return this.http.get<Solicitud>(environment.urlApi + "solicitud/listar" ).pipe(
+  getEmpleados():Observable<Empleado>{
+    return this.http.get<Empleado>(environment.urlApi + "empleado/listar" ).pipe(
       catchError(this.handleError)
     )
   }
 
-  createSolicitud(datosSolicitud:Solicitud):Observable<any>{
-    return this.http.post(environment.urlApi + "solicitud/crear",datosSolicitud);
+  createEmpleado(datosEmpleado:Empleado):Observable<any>{
+    return this.http.post(environment.urlApi + "empleado/crear",datosEmpleado);
   }
 
-  updateSolicitud(id:any, datosSolicitud:Solicitud):Observable<any>{
-    return this.http.put(environment.urlApi + "solicitud/editar/" + id,datosSolicitud);
+  updateEmpleado(id:any, datosEmpleado:Empleado):Observable<any>{
+    return this.http.put(environment.urlApi + "empleado/editar/" + id,datosEmpleado);
   }
 
 

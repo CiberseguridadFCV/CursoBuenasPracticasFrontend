@@ -1,0 +1,9 @@
+.bg-azul{
+    background-color: #103cbe;
+}
+
+.centrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

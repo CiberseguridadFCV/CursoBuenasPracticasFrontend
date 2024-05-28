@@ -1,0 +1,52 @@
+<app-nav></app-nav>
+
+<div class="d-flex justify-content-center align-items-center mb-3">
+  <div class="card w-25 shadow-lg mt-5 border-0">
+    <div class="card-header fw-bolder text-center bg-primary text-white">Editar datos del empleado Número {{empleado?.id}}</div>
+    <div class="card-body">
+  
+      <form [formGroup]="formularioDeEmpleado" (ngSubmit)="enviarDatos()">
+  
+        <div class="mb-3 d-flex justify-content-start align-items-center gap-5">
+          <label for="" class="form-label fw-bold w-50">Documento</label>
+          <input formControlName="empleado_documento" type="text" class="form-control h-25 w-50 rounded-0">
+        </div>
+  
+        <div class="mb-3 d-flex justify-content-start align-items-center gap-5">
+          <label for="" class="form-label fw-bold w-50">Nombre</label>
+          <input formControlName="empleado_nombre" type="text" class="form-control  h-25 w-50 rounded-0">
+        </div>
+  
+        <div class="mb-3  d-flex justify-content-start align-items-center gap-5">
+          <label for="" class="form-label fw-bold w-50">Área</label>
+          <input formControlName="empleado_area" type="text" class="form-control  h-25 w-50 rounded-0">
+        </div>
+  
+        <div class="mb-3  d-flex justify-content-start align-items-center gap-5">
+          <label for="" class="form-label fw-bold w-50">Cargo</label>
+          <input formControlName="empleado_cargo" type="text" class="form-control  h-25 w-50 rounded-0">
+        </div>
+  
+        <div class="mb-3 d-flex justify-content-start align-items-center gap-5">
+          <label for="" class="form-label fw-bold w-50">Fecha de Nacimiento</label>
+          <input formControlName="empleado_fecha_nacimiento" type="text" class="form-control  h-25 w-50 rounded-0">
+        </div>
+  
+        <div class="mb-3  d-flex justify-content-start align-items-center gap-5">
+          <label for="" class="form-label fw-bold w-50">Estado</label>
+          <select formControlName="estado" class="form-select  h-25 w-50 rounded-0" aria-label="Default select example">
+            <option selected>Activo</option>
+            <option value="Inactivo">Inactivo</option>
+          </select>
+        </div>
+  
+        <div class="centrar gap-1" role="group" aria-label="Button group name">
+          <button type="submit" class="btn btn-success btn-sm rounded-0 w-25">Guardar</button>
+          <button type="button" class="btn btn-danger  btn-sm rounded-0 w-25" routerLink="/inicio">Cancelar</button>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+    
+</div>

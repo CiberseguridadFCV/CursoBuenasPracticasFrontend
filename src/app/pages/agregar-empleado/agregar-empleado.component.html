@@ -1,0 +1,50 @@
+<app-nav></app-nav>
+
+<div class="d-flex justify-content-center align-items-center">
+  <div class="card w-50 shadow-lg mt-5 border-0">
+
+    <div class="card-header fw-bolder text-center bg-azul text-white">
+      CREAR EMPLEADO
+    </div>
+
+    <div class="card-body">
+  
+      <form [formGroup]="formularioDeEmpleado" (ngSubmit)="enviarDatos()">
+  
+        <div class="mb-3 ">
+          <input formControlName="empleado_documento" type="text" placeholder="Documento" class="form-control">
+        </div>
+  
+        <div class="mb-3">
+          <input formControlName="empleado_nombre" type="text" placeholder="Nombre" class="form-control" >
+        </div>
+  
+        <div class="mb-3">
+          <input formControlName="empleado_area" type="text" class="form-control" placeholder="Area">
+        </div>
+  
+        <div class="mb-3">
+          <input formControlName="empleado_cargo" type="text" id="disabledTextInput" class="form-control" placeholder="Cargo">
+        </div>
+  
+        <div class="mb-3">
+          <input formControlName="empleado_fecha_nacimiento" type="text" id="disabledTextInput" class="form-control" placeholder="Fecha de nacimiento">
+        </div>
+  
+        <div class="centrar gap-1" role="group" aria-label="Button group name">
+          <button type="submit" class="btn btn-success btn-sm rounded-0 w-25">Crear empleado</button>
+          <button type="button" class="btn btn-danger btn-sm rounded-0 w-25" routerLink="/inicio"> Cancelar </button>
+        </div>
+  
+  
+  
+      </form>
+  
+  
+    </div>
+  
+  </div>
+</div>
+
+
+

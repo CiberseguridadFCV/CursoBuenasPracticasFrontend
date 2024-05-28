@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../services/auth/login.service';
-import { SolicitudService } from '../../services/solicitud/solicitud.service';
+import { EmpleadoService } from '../../services/empleado/empleado.service';
 import { Router } from '@angular/router';
 import { catchError, of } from 'rxjs';
 
@@ -11,13 +11,13 @@ import { catchError, of } from 'rxjs';
 })
 export class DashboardComponent implements OnInit{
 
-  Solicitudes:any;
+  Empleados:any;
 
   userLoginOn:boolean=false;
 
   userInfo:Object="";
 
-  constructor(private loginService: LoginService, private solicitudService:SolicitudService, public router:Router){}
+  constructor(private loginService: LoginService, private empleadoService:EmpleadoService, public router:Router){}
 
 
   ngOnInit(): void {
@@ -34,9 +34,9 @@ export class DashboardComponent implements OnInit{
       console.log(this.userInfo);
     })
 
-    this.solicitudService.getSolicitudes().pipe(
+    this.empleadoService.getEmpleados().pipe(
       catchError(error => {
-        console.error('Error al obtener solicitudes:', error);
+        console.error('Error al obtener los empleados:', error);
         sessionStorage.removeItem("token");
         this.router.navigate(['/iniciar-sesion']);
 
@@ -44,7 +44,7 @@ export class DashboardComponent implements OnInit{
       })
     ).subscribe(respuesta => {
       console.log(respuesta);
-      this.Solicitudes = respuesta;
+      this.Empleados = respuesta;
     });
 
   }
