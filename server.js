@@ -6,11 +6,8 @@ const crypto = require('crypto');
 const fs = require('fs');
 const https = require('https');
 
-//const privateKey = fs.readFileSync('C:/Users/smcm_/Documents/FCV/Curso de desarollo de software seguro/Aplicacion/CursoBuenasPracticasFrontend/key.pem', 'utf8');
-//const certificate = fs.readFileSync('C:/Users/smcm_/Documents/FCV/Curso de desarollo de software seguro/Aplicacion/CursoBuenasPracticasFrontend/cert.pem', 'utf8');
-
-const privateKey = fs.readFileSync('D:/Fcv/Curso de desarollo/Aplicacion ejemplo de buenas prácticas/FRONTENDSAHIexterno/frontend/key.pem', 'utf8');
-const certificate = fs.readFileSync('D:/Fcv/Curso de desarollo/Aplicacion ejemplo de buenas prácticas/FRONTENDSAHIexterno/frontend/cert.pem', 'utf8');
+const privateKey = fs.readFileSync('D:/Fcv/Curso de desarollo/Aplicacion ejemplo de buenas prácticas/CursoBuenasPracticasFrontend/key.pem', 'utf8');
+const certificate = fs.readFileSync('D:/Fcv/Curso de desarollo/Aplicacion ejemplo de buenas prácticas/CursoBuenasPracticasFrontend/cert.pem', 'utf8');
 
 const credentials = { key: privateKey, cert: certificate };
 
